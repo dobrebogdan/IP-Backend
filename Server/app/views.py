@@ -30,4 +30,4 @@ def put(request):
     if request.method == 'PUT':
         image = request.body
         id = save_image(image)
-    return HttpResponse(id)
+        return HttpResponse(id)
