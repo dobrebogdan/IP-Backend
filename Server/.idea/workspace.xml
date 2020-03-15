@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3244e886-1891-4dd2-acea-43927d793c09" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +21,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="CTYAPgmH" />
   </component>
   <component name="ProjectId" id="1Z4E1ep4wwZsNtm9GQqiK3NMFfW" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -116,5 +116,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="7" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1584180118580" />
+    <state x="649" y="440" key="com.intellij.ide.util.TipDialog" timestamp="1584290288503">
+      <screen x="67" y="27" width="1853" height="1173" />
+    </state>
+    <state x="649" y="440" key="com.intellij.ide.util.TipDialog/67.27.1853.1173@67.27.1853.1173" timestamp="1584290288503" />
   </component>
 </project>
