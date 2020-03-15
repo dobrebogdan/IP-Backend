@@ -5,10 +5,10 @@ Backed for the IP project
 Make sure Python, Pip and Django are installed. To install Django use the following command: pip3 install django
 
 #Running the server
-Open a terminal, navigate to the /IP-Backend/Server folder and run the following command: python3 manage.py runserver
+Open a terminal, navigate to the /IP-Backend/Server folder and run the following command: python3 manage.py runserver 0.0.0.0:8000
 You can also open the project in PyCharm Professional Edition and click run. 
 
-The server is expected to run on http://127.0.0.1:8000/
+The server is expected to run on http://0.0.0.0:8000/
 Images in binary format can be retrieved with get requests and uploaded with put requests. 
 
 Get requests for the images should be sent to http://127.0.0.1:8000/app/get/id  where id is the id of the image you want.
