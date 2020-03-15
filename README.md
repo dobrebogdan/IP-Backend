@@ -6,7 +6,7 @@ Make sure Python, Pip and Django are installed. To install Django use the follow
 
 #Running the server
 Open a terminal, navigate to the /IP-Backend/Server folder and run the following command: python3 manage.py runserver 0.0.0.0:8000
-You can also open the project in PyCharm Professional Edition and click run. 
+You can also open the project in PyCharm Professional Edition and click run after changing the address and port in the running configuration. 
 
 The server is expected to run on http://0.0.0.0:8000/
 Images in binary format can be retrieved with get requests and uploaded with put requests. 
