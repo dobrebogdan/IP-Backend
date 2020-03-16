@@ -2,7 +2,8 @@ import os.path
 import uuid
 from django.http import HttpResponse
 
-path = 'images/'
+path = "images/"
+extension = ".jpg"
 
 retrievedImages = set()
 
@@ -13,15 +14,16 @@ def poll(request, id):
         return HttpResponse(1)
 
 def get(request, id):
-    completeName = os.path.join(path, id + ".jpg")
+    completeName = os.path.join(path, id + ".bin")
     with open(completeName, 'rb+') as file:
         image = file.read()
     retrievedImages.add(id)
     return HttpResponse(image)
 
 def save_image(image):
-    id = str(uuid.uuid1())
-    completeName = os.path.join(path, id + ".jpg")
+    # id = str(uuid.uuid1())
+    id = "upload"
+    completeName = os.path.join(path, id + ".bin")
     with open(completeName, 'wb+') as file:
         file.write(image)
     return id
