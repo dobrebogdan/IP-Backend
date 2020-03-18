@@ -14,7 +14,7 @@ def poll(request, id):
         return HttpResponse(1)
 
 def get(request, id):
-    completeName = os.path.join(path, id + ".bin")
+    completeName = os.path.join(path, id + ".jpg")
     with open(completeName, 'rb+') as file:
         image = file.read()
     retrievedImages.add(id)
