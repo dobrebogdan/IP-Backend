@@ -19,3 +19,10 @@ They will return 1 if it wasn't retrieved yet and 0 otherwise.
 Put requests with the image in binary format should be sent to http://0.0.0.0:8000/app/put
 
 All the images are stored locally in the /IP-Backend/Server/images folder.
+
+OCR & Translate api prerequisites:
+- set environment variables: GOOGLE_APPLICATION_CREDENTIALS="[PATH]\UnityAR-98ae3738e859.json" and GCLOUD_PROJECT=unityar-1584957126753
+- run the following commands to install Google APIs: 
+        pip install --upgrade google-api-python-client
+        pip install --upgrade google-cloud-vision
+        pip install google-cloud-translate==2.0.0
