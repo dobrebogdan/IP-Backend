@@ -26,3 +26,6 @@ OCR & Translate api prerequisites:
         pip install --upgrade google-api-python-client
         pip install --upgrade google-cloud-vision
         pip install google-cloud-translate==2.0.0
+		
+- if any of the commands fail in windows due to acces error, add --user at their end. Example: pip install --upgrade google-api-python-client --user
+
