@@ -119,3 +119,13 @@ dmypy.json
 .pyre/
 
 # End of https://www.gitignore.io/api/django
+
+
+
+# jupyter notebook
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+
+# Text Classification pickle
+pickle_data.bin
