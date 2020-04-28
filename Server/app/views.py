@@ -1,9 +1,10 @@
 import os.path
 import uuid
+
+from app.CreateNewImages import create_new_images
 from django.http import HttpResponse
 
 path = "images/"
-extension = ".jpg"
 
 retrievedImages = set()
 
@@ -20,16 +21,9 @@ def get(request, id):
     retrievedImages.add(id)
     return HttpResponse(image)
 
-def save_image(image):
-    # id = str(uuid.uuid1())
-    id = "upload"
-    completeName = os.path.join(path, id + ".bin")
-    with open(completeName, 'wb+') as file:
-        file.write(image)
-    return id
 
 def put(request):
     if request.method == 'PUT':
         image = request.body
-        id = save_image(image)
+        id = create_new_images(image)
         return HttpResponse(id)
