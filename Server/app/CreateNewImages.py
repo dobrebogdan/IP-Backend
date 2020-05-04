@@ -3,11 +3,14 @@ from ImageProcessing.preprocess_image import TextImage
 from ImageProcessing import generate_image
 import ImageToTranslatedText
 import logging
+import traceback
 import uuid
 path = "images/"
+logging.basicConfig()
 
 def create_new_images(image):
     # id = str(uuid.uuid1())
+    text = ""
     original_id = "upload"
     cropped_id = "1"
     translated_id = "2"
@@ -18,9 +21,13 @@ def create_new_images(image):
         file.write(image)
     try:
         cropped_text_img = TextImage(complete_original_path)
+        logging.info("Original path:" + complete_original_path)
+        logging.info("Cropped path: " + complete_cropped_path)
         cropped_text_img.crop_text_zone(complete_cropped_path)
         text = ImageToTranslatedText.image_to_translated_text(complete_cropped_path)
         generate_image.text_to_image(text=text, output_image_path=complete_translated_path)
-    except:
-        logging.error("Some images could not be created")
-    return original_id
+        logging.info("All images were created")
+    except Exception as exception:
+        logging.error("Some images could not be created because of the following exception\n" + str(exception))
+        traceback.print_exc()
+    return original_id, text

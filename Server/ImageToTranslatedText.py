@@ -46,5 +46,3 @@ def image_to_translated_text(infile):
 
     return result['translatedText']
 
-text = image_to_translated_text("./images/1.jpg")
-print(text)
