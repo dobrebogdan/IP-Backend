@@ -45,4 +45,3 @@ def image_to_translated_text(infile):
     result = translate_text(text)
 
     return result['translatedText']
-
