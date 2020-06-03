@@ -2,10 +2,7 @@ import textwrap
 
 from PIL import Image, ImageDraw, ImageFont
 
-
-
 def check_fit(text, font_fname, font_size, image_size):
-
     const_spacing = 4 #pixels between lines
 
     image_width = image_size[0]
@@ -40,15 +37,23 @@ def binary_search_size(text, font_fname, image_size, min_size = 1, max_size = 12
             left = mid+1
         else:
             right = mid-1
+
     return best_size
 
 
 def preprocess_text(text, font_fname, image_size):
 
+    print("#")
+    print(text)
+    print("#")
+    print(font_fname)
+    print("#")
+    print(image_size)
     image_width = image_size[0]
 
     font_size = binary_search_size(text, font_fname, image_size)
-
+    print("#")
+    print(font_size)
     font = ImageFont.truetype(font_fname, size = font_size)
 
     char_width = font.getsize('a')[0]
@@ -61,6 +66,9 @@ def preprocess_text(text, font_fname, image_size):
         new_text += textwrap.fill(par, max_chars_on_one_line)
         new_text += '\n'
 
+    print("#")
+    print(new_text)
+    print("#")
     return new_text, font
 
 

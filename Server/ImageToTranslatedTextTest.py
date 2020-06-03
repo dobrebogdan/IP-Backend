@@ -4,9 +4,16 @@ from ImageToTranslatedText import pic_to_text, translate_text
 class TranslationTestCase(unittest.TestCase):
 
     def test_text_to_translation(self):
-        result = translate_text("The quick brown fox jumps over the lazy dog")
+        result = translate_text('The quick brown fox jumps over the lazy dog')
         expected = {'translatedText': 'Vulpe brună rapidă sare peste câinele leneș', 'detectedSourceLanguage': 'en', 'input': 'The quick brown fox jumps over the lazy dog'}
         self.assertEqual(expected, result)
+
+    def test_empty_translate(self):
+        result = translate_text("")
+        expected = {'translatedText': '', 'detectedSourceLanguage': 'en',
+                    'input': ''}
+        self.assertEqual(expected, result)
+
 
     def test_image_to_text(self):
         result = pic_to_text('.\\test_images\\test_image.jpg')
