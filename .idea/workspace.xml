@@ -4,7 +4,6 @@
     <list default="true" id="f27d68b3-e308-45fb-8379-5f977f6f1f3f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/ImageProcessing/generate_image.py" beforeDir="false" afterPath="$PROJECT_DIR$/Server/ImageProcessing/generate_image.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/ImageToTranslatedTextTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Server/ImageToTranslatedTextTest.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,6 +158,7 @@
       <workItem from="1589969660595" duration="22000" />
       <workItem from="1591123735129" duration="4433000" />
       <workItem from="1591180676053" duration="2781000" />
+      <workItem from="1591183544217" duration="124000" />
     </task>
     <servers />
   </component>

@@ -42,33 +42,17 @@ def binary_search_size(text, font_fname, image_size, min_size = 1, max_size = 12
 
 
 def preprocess_text(text, font_fname, image_size):
-
-    print("#")
-    print(text)
-    print("#")
-    print(font_fname)
-    print("#")
-    print(image_size)
     image_width = image_size[0]
-
     font_size = binary_search_size(text, font_fname, image_size)
-    print("#")
-    print(font_size)
     font = ImageFont.truetype(font_fname, size = font_size)
-
     char_width = font.getsize('a')[0]
     max_chars_on_one_line = image_width//char_width
-
     split_text = text.split(sep = '\n')
-
     new_text = ''
     for par in split_text:
         new_text += textwrap.fill(par, max_chars_on_one_line)
         new_text += '\n'
 
-    print("#")
-    print(new_text)
-    print("#")
     return new_text, font
 
 
