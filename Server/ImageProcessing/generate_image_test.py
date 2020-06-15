@@ -1,5 +1,5 @@
 import unittest
-from ImageProcessing.generate_image import check_fit, binary_search_size, preprocess_text
+from generate_image import check_fit, binary_search_size, preprocess_text
 from PIL import ImageFont
 
 class GenerateImageTestCase(unittest.TestCase):
