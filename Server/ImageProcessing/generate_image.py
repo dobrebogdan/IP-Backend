@@ -18,8 +18,12 @@ def check_fit(text, font_fname, font_size, image_size):
 
     line_no = 0
     for par in split_text:
-        line_no += len(textwrap.wrap(par, max_chars_on_one_line))
+        wrapped_text = textwrap.wrap(par, max_chars_on_one_line)
+        # If we have an empty paragraph, we still count this as an empty line
+        no_lines_wrapped_text = max(1, len(wrapped_text))
+        line_no += no_lines_wrapped_text
 
+    
     if line_no > max_lines_on_page:
         return False
     return True
@@ -52,15 +56,19 @@ def preprocess_text(text, font_fname, image_size):
     for par in split_text:
         new_text += textwrap.fill(par, max_chars_on_one_line)
         new_text += '\n'
-
+    
     return new_text, font
 
 
 def text_to_image(text, font_fname = "fonts\\DejaVuSansMono.ttf", output_image_path = "my_image.jpg", size = (1166, 1600)):
+    new_text, font = preprocess_text(text, font_fname, (size[0], size[1]))
+
+    font_height = 1.5 * font.getsize('a')[1] + 14
+
     img = Image.new('RGB', (size[0], size[1]), color = (255,255,255))
     img_draw = ImageDraw.Draw(img)
 
-    new_text, font = preprocess_text(text, font_fname, (size[0], size[1]))
+    img_draw.rectangle(((0,0), (size[0], font_height)), fill = "orange")
 
     img_draw.text((10,10), new_text, font = font, fill = (0,0,0))
 
@@ -70,11 +78,14 @@ def text_to_image(text, font_fname = "fonts\\DejaVuSansMono.ttf", output_image_p
 
 
 def main():
+    tag_text = "Istorie"
     text_in_ro = '''În anul 1521 la Câmpulung-Muscel, vechea capitală a Ţării Româneşti, a fost redactat primul document scris, compact şi unitar, din câte sunt cunoscute până astăzi in limba română: Scrisoarea lui Neacşu ot Dlăgopole (Câmpulung Muscel). Scrisoarea conţine un secret de mare importanţă, avertizându-l pe Johannes Benkner, judele Braşovului, despre o invazie a turcilor asupra Ardealului şi Ţării Româneşti ce tocmai se pregătea la sudul Dunării:
 
 „Mudromu I plemenitomu, I cistitomu I bogom darovanomu jupan Hanăş Bengner ot Braşov mnogo zdravie ot Nécşu ot Dlăgopole”. (Preaînţeleptului şi cinstitului, şi de Dumnezeu dăruitului jupân Hanăş Bengner din Braşov multă sănătate din partea lui Neacşu din Câmpulung, n. n.).'''
+    
+    tagged_text = tag_text + "\n\n" + text_in_ro
 
-    text_to_image(text_in_ro)
+    text_to_image(tagged_text)
 
 
 
