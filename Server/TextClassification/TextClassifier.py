@@ -114,6 +114,10 @@ class TextClassifier(object):
         self.unprocessed_text_data = self.news_data.data
         self.labels = self.news_data.target
         self.labelNames = self.news_data.target_names
+
+        for i in range(0, len(self.labelNames)):
+            self.labelNames[i] = self.labelNames[i].replace("politica", "politică")
+        print('labelNames =', self.labelNames)
         
         self.trainData, self.testData, self.trainLabels, self.testLabels = train_test_split(
             self.unprocessed_text_data, 

@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 
+import os.path
 from TextClassifier import TextClassifier
 
-data_set_path = 'data/bbc'
+data_set_path = os.path.join('data','bbc')
+print(data_set_path)
 tc = TextClassifier.getTextClassifier(data_set_path)
 # tc = TextClassifier.getTextClassifier(data_set_path, forceRecompute=True)
 
@@ -11,6 +13,7 @@ categories, internalCategoryIndexes = tc.predictTexts(
         "bussiness, bussiness stock market lawyer CEO boss employee manager firm board owner founder bussiness",
         "algorithm, technology complexity hardware software bugs software software software software program",
         "gallery concert soccer musical book award audience film",
+        "president, law, bill, minister, agriculture, senate, mayor, city",
         "technology computer hardware software websites operate mail email program Microsoft Google PC performance",
         """
             He gave no further clues about its vintage, but the delicate, almost conversational vocals are reminiscent of his more recent live shows.
